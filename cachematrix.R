@@ -6,7 +6,7 @@
 ## It is really a list containing 4 functions:
 ### set to store the value of the matrix
 ### get to retrieve the value of the matrix
-### setinc to store the value of the inverse to the cache
+### setinv to store the value of the inverse to the cache
 ### getinv to retrieve the value of the cached inverse.
 #
 makeCacheMatrix <- function(x = matrix()) {
@@ -35,7 +35,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## so there is no check for this possible failure. 
 #
 cacheSolve <- function(x, ...) {
-  invs <- x$getinv()    # retrieve cached value of inverse
+  invs <- x$getinv()     # retrieve cached value of inverse
   if(!is.null(invs)) {
     message("getting cached data")
     return(invs)         # cached value is valid -> return it
