@@ -35,10 +35,10 @@ makeCacheMatrix <- function(x = matrix()) {
 ## so there is no check for this possible failure. 
 #
 cacheSolve <- function(x, ...) {
-  invs<- x$getinv()      # retrieve cached value of inverse
+  invs <- x$getinv()    # retrieve cached value of inverse
   if(!is.null(invs)) {
     message("getting cached data")
-    return(invs)         # cached valur is valid -> return it
+    return(invs)         # cached value is valid -> return it
   }
   data <- x$get()        # retrieve cached value of matrix
   invs <- solve(data)    # compute inverse
