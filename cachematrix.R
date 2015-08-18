@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL            # inv is the cached inverse
   set <- function(y) {
     x <<- y              # x is the cached matrix
-    invc <<- NULL        # x has changed -> inverse is invalid
+    inv <<- NULL         # x has changed -> inverse is invalid
   }
   get <- function() x   
   setinv <- function(invc) inv <<- invc
@@ -28,9 +28,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ## It first checks to see if the inverse has already been calculated.
 ## If so, it gets the inverse from the cache via the getinv function,
 ## skips the computation and returns the cached inverse.
-## Otherwise, it calculates the inverse of the matrix, sets the value of the
-## inverse in the cache via the setinv function and returns the calculated
-## inverse.
+## Otherwise, it calculates the inverse of the matrix, stores the value of
+## theinverse in the cache via the setinv function and returns the
+## calculated inverse.
 ## Remark: This function assumes that the matrix is always invertible,
 ## so there is no check for this possible failure. 
 #
